@@ -5,7 +5,7 @@ networks:
 services:
   cloudflared:
     container_name: cloudflared
-    image: cloudflare/cloudflared:2025.4.0
+    image: cloudflare/cloudflared:2025.4.2
     command: tunnel --no-autoupdate run
     networks:
       - proxy
