@@ -1,0 +1,11 @@
+.env*
+!.env.example
+
+# ignore all hidden directories
+.*/
+
+# ignore all subdirectories
+*/*/
+
+# don't ignore the template directory
+!.template/

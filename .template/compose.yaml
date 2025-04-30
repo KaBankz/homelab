@@ -1,0 +1,15 @@
+services:
+  NAME:
+    container_name: NAME
+    image: ORG/IMAGE:TAG
+    ports:
+      - 6969:6969
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=${UMASK}
+      - TZ=${TZ}
+    volumes:
+      - ./config:/config:rw
+      - ./data:/data:rw
+    restart: unless-stopped
