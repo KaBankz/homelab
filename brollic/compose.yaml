@@ -1,0 +1,127 @@
+services:
+  qbittorrent:
+    container_name: qbittorrent
+    image: ghcr.io/hotio/qbittorrent:release-4.6.3
+    ports:
+      - 9010:8080
+      - 9011:8118 # privoxy
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=${UMASK}
+      - TZ=${TZ}
+      - WEBUI_PORTS=8080/tcp,8080/udp
+      - VPN_ENABLED=true
+      - VPN_PROVIDER=proton
+      - VPN_LAN_NETWORK=10.0.0.0/24 # without this the webui is not accessible.
+      - VPN_CONF=wg0
+      - VPN_AUTO_PORT_FORWARD=true
+      - VPN_KEEP_LOCAL_DNS=false
+      - PRIVOXY_ENABLED=true # enabled for prowlarr (route some trackers through vpn)
+    volumes:
+      - ./qbittorrent:/config:rw
+      - ${STORAGE}/torrents:/data/torrents:rw
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv6.conf.all.disable_ipv6=1 # ipv6 crashes the container, so it's disabled
+    restart: unless-stopped
+
+  qbitmanage:
+    container_name: qbitmanage
+    image: ghcr.io/hotio/qbitmanage:release-4.2.2
+    depends_on:
+      - qbittorrent
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=${UMASK}
+      - TZ=${TZ}
+      - QBT_SCHEDULE=35
+    volumes:
+      - ./qbitmanage:/config:rw
+      - ./qbittorrent:/qbittorrent:rw # give qbitmanage access to qbittorrent data
+      - ${STORAGE}/torrents:/data/torrents:rw
+    restart: unless-stopped
+
+  cross-seed:
+    container_name: cross-seed
+    image: ghcr.io/cross-seed/cross-seed:6.12.2
+    depends_on:
+      - qbittorrent
+    user: ${PUID}:${PUID}
+    volumes:
+      - ./cross-seed/config:/config:rw
+      - ./cross-seed/output:/cross-seeds:rw
+      - ./qbittorrent/data/BT_backup:/torrents:ro # give cross-seed access to qbittorrent torrents
+      - ${STORAGE}/torrents:/torrents-data:ro # give cross-seed access to downloaded torrents
+    command: daemon # this enables daemon mode to constantly scan for new torrents
+    restart: unless-stopped
+
+  recyclarr:
+    container_name: recyclarr
+    image: ghcr.io/recyclarr/recyclarr:7.4.1
+    depends_on:
+      - sonarr-anime
+      - radarr-anime
+    user: ${PUID}:${PUID}
+    environment:
+      - TZ=${TZ}
+      - RECYCLARR_CREATE_CONFIG=true
+      - CRON_SCHEDULE=@daily
+    volumes:
+      - ./recyclarr:/config:rw
+    restart: unless-stopped
+
+  sonarr-anime:
+    container_name: sonarr-anime
+    image: ghcr.io/hotio/sonarr:release-4.0.14.2939
+    depends_on:
+      - qbittorrent
+      - prowlarr
+    ports:
+      - 9014:8989
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=${UMASK}
+      - TZ=${TZ}
+    volumes:
+      - ./sonarr-anime:/config:rw
+      - ${STORAGE}:/data:rw
+    restart: unless-stopped
+
+  radarr-anime:
+    container_name: radarr-anime
+    image: ghcr.io/hotio/radarr:release-5.22.4.9896
+    depends_on:
+      - qbittorrent
+      - prowlarr
+    ports:
+      - 9015:7878
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=${UMASK}
+      - TZ=${TZ}
+    volumes:
+      - ./radarr-anime:/config:rw
+      - ${STORAGE}:/data:rw
+    restart: unless-stopped
+
+  prowlarr:
+    container_name: prowlarr
+    image: ghcr.io/hotio/prowlarr:release-1.34.1.5021
+    depends_on:
+      - qbittorrent
+    ports:
+      - 9016:9696
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=${UMASK}
+      - TZ=${TZ}
+    volumes:
+      - ./prowlarr:/config:rw
+    restart: unless-stopped
