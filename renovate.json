@@ -6,7 +6,7 @@
     {
       "matchDatasources": ["docker"],
       "matchPackagePatterns": ["^ghcr.io/hotio/"],
-      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$"
+      "versionCompatibility": "^(?<compatibility>\\w+)-(?<version>.*)$"
     },
     {
       "matchPackageNames": ["ghcr.io/hotio/qbittorrent"],
@@ -27,6 +27,14 @@
     {
       "matchPackageNames": ["ghcr.io/hotio/radarr"],
       "sourceUrl": "https://github.com/Radarr/Radarr"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/hotio/plex"],
+      "changelogUrl": "https://forums.plex.tv/t/plex-media-server/30447"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/hotio/tautulli"],
+      "sourceUrl": "https://github.com/Tautulli/Tautulli"
     }
   ]
 }
