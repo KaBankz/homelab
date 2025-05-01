@@ -1,0 +1,8 @@
+services:
+  krabby:
+    container_name: krabby
+    image: ghcr.io/kabankz/krabby:master
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - GUILD_ID=${GUILD_ID}
+    restart: unless-stopped
