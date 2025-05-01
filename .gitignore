@@ -4,5 +4,10 @@
 # ignore all hidden directories
 .*/
 
+# ignore all sub directories
+*/*/*
+# only track the .gitkeep files
+!*/*/.gitkeep
+
 # don't ignore the template directory
 !.template/
