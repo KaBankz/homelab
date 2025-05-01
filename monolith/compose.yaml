@@ -1,0 +1,52 @@
+services:
+  plex:
+    container_name: plex
+    image: ghcr.io/hotio/plex:release-1.41.6.9685-d301f511a
+    ports:
+      - 32400:32400
+    hostname: MONOLITH
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=${UMASK}
+      - TZ=${TZ}
+      - PLEX_ADVERTISE_URL=http://${HOST_IP}:32400 # without this plex can't find the server
+      - PLEX_NO_AUTH_NETWORKS=${ALLOWED_SUBNETS}
+      - PLEX_BETA_INSTALL=true
+      - PLEX_PURGE_CODECS=false # not sure what this does docs missing
+      # vpn magic below to securely expose plex to the internet via the vpn port forwarding
+      - VPN_ENABLED=true
+      - VPN_CONF=wg0
+      - VPN_PROVIDER=proton
+      - VPN_LAN_NETWORK=10.0.0.0/24
+      - VPN_EXPOSE_PORTS_ON_LAN
+      - VPN_AUTO_PORT_FORWARD=true
+      - VPN_AUTO_PORT_FORWARD_TO_PORTS=32400/tcp,32400/udp
+      - VPN_KEEP_LOCAL_DNS=false
+      - PRIVOXY_ENABLED=false
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv6.conf.all.disable_ipv6=1
+    devices:
+      - /dev/dri:/dev/dri # for hardware transcoding
+    volumes:
+      - ./plex/config:/config:rw
+      - /dev/shm:/transcode:rw # store transcodes in ram
+      - ${STORAGE}/media:/data/media:ro
+    restart: unless-stopped
+
+  tautulli:
+    container_name: tautulli
+    image: ghcr.io/hotio/tautulli:release-2.15.2
+    ports:
+      - 32401:8181
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=${UMASK}
+      - TZ=${TZ}
+    volumes:
+      - ./tautulli:/config:rw
+    restart: unless-stopped
