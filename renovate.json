@@ -6,7 +6,28 @@
     {
       "matchDatasources": ["docker"],
       "matchPackagePatterns": ["^ghcr.io/hotio/"],
-      "versioning": "regex:^release-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:\\.(?<build>\\d+))?(?:-(?<hash>[a-f0-9]+))?$"
+      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/hotio/qbittorrent"],
+      "sourceUrl": "https://github.com/qbittorrent/qbittorrent"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/hotio/qbitmanage"],
+      "sourceUrl": "https://github.com/StuffAnThings/qbit_manage"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/hotio/prowlarr"],
+      "sourceUrl": "https://github.com/Prowlarr/Prowlarr",
+      "versionCompatibility": "^(?<compatibility>.*)-(?<version>.*)$"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/hotio/sonarr"],
+      "sourceUrl": "https://github.com/Sonarr/Sonarr"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/hotio/radarr"],
+      "sourceUrl": "https://github.com/Radarr/Radarr"
     }
   ]
 }
