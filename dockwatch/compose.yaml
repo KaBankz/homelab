@@ -1,0 +1,13 @@
+services:
+  dockwatch:
+    container_name: dockwatch
+    image: ghcr.io/notifiarr/dockwatch:v0.6.407
+    ports:
+      - 9999:80
+    environment:
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ./config:/config:rw
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+    restart: unless-stopped
