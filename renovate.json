@@ -1,39 +1,61 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "ignorePaths": [".template/**"],
+  "extends": [
+    "config:recommended"
+  ],
+  "ignorePaths": [
+    ".template/**"
+  ],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchPackagePatterns": ["^ghcr.io/hotio/"],
-      "versionCompatibility": "^(?<compatibility>\\w+)-(?<version>.*)$"
+      "matchDatasources": [
+        "docker"
+      ],
+      "versionCompatibility": "^(?<compatibility>\\w+)-(?<version>.*)$",
+      "matchPackageNames": [
+        "/^ghcr.io/hotio//"
+      ]
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/qbittorrent"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/qbittorrent"
+      ],
       "sourceUrl": "https://github.com/qbittorrent/qbittorrent"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/qbitmanage"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/qbitmanage"
+      ],
       "sourceUrl": "https://github.com/StuffAnThings/qbit_manage"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/prowlarr"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/prowlarr"
+      ],
       "sourceUrl": "https://github.com/Prowlarr/Prowlarr"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/sonarr"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/sonarr"
+      ],
       "sourceUrl": "https://github.com/Sonarr/Sonarr"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/radarr"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/radarr"
+      ],
       "sourceUrl": "https://github.com/Radarr/Radarr"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/plex"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/plex"
+      ],
       "changelogUrl": "https://forums.plex.tv/t/plex-media-server/30447"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/tautulli"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/tautulli"
+      ],
       "sourceUrl": "https://github.com/Tautulli/Tautulli"
     }
   ]
