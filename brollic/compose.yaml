@@ -54,8 +54,8 @@ services:
     volumes:
       - ./cross-seed/config:/config:rw
       - ./cross-seed/output:/cross-seeds:rw
-      - ./qbittorrent/data/BT_backup:/torrents:ro # give cross-seed access to qbittorrent torrents
-      - ${STORAGE}/torrents:/torrents-data:ro # give cross-seed access to downloaded torrents
+      - ./qbittorrent/data/BT_backup:/torrents:rw # give cross-seed access to qbittorrent torrents
+      - ${STORAGE}/torrents:/torrents-data:rw # give cross-seed access to downloaded torrents
     command: daemon # this enables daemon mode to constantly scan for new torrents
     restart: unless-stopped
 
