@@ -32,7 +32,7 @@ services:
     devices:
       - /dev/dri:/dev/dri # for hardware transcoding
     volumes:
-      - ./plex/config:/config:rw
+      - ./plex:/config:rw
       - /dev/shm:/transcode:rw # store transcodes in ram
       - ${STORAGE}/media:/data/media:ro
     restart: unless-stopped
