@@ -112,7 +112,7 @@ services:
 
   prowlarr:
     container_name: prowlarr
-    image: ghcr.io/hotio/prowlarr:release-1.34.1.5021
+    image: ghcr.io/hotio/prowlarr:release-1.37.0.5076
     depends_on:
       - qbittorrent
     ports:
