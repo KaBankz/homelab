@@ -94,7 +94,7 @@ services:
 
   radarr-anime:
     container_name: radarr-anime
-    image: ghcr.io/hotio/radarr:release-5.22.4.9896
+    image: ghcr.io/hotio/radarr:release-5.26.2.10099
     depends_on:
       - qbittorrent
       - prowlarr
