@@ -11,3 +11,5 @@
 
 # don't ignore the template directory
 !.template/
+
+.DS_Store
