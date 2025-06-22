@@ -17,6 +17,7 @@ services:
       MAX_PLAYERS: 10
       SERVER_NAME: ARKON
       MOTD: Welcome to ARKON!
+      SEED: ${SEED}
       ICON: https://github.com/kabankz.png
       PLUGINS: |
         https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot
