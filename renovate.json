@@ -57,6 +57,12 @@
         "ghcr.io/hotio/tautulli"
       ],
       "sourceUrl": "https://github.com/Tautulli/Tautulli"
+    },
+    {
+      "matchPackageNames": [
+        "lscr.io/linuxserver/speedtest-tracker"
+      ],
+      "sourceUrl": "https://github.com/alexjustesen/speedtest-tracker"
     }
   ]
 }
