@@ -9,7 +9,6 @@ services:
       TZ: ${TZ}
       EULA: "true"
       TYPE: "PAPER"
-      PAPER_CHANNEL: experimental
       SNOOPER_ENABLED: "false"
       VERSION: "LATEST"
       DIFFICULTY: "normal"
@@ -20,6 +19,8 @@ services:
       PLUGINS: |
         https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot
         https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot
+        https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/latest/builds/latest/downloads/geyseroptionalpack
+        https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/5.4.0/PAPER/ViaVersion-5.4.0.jar
     volumes:
       - ./data:/data:rw
     restart: unless-stopped
