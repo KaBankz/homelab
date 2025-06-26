@@ -30,7 +30,7 @@ services:
 
   qbitmanage:
     container_name: qbitmanage
-    image: ghcr.io/hotio/qbitmanage:release-4.2.2
+    image: ghcr.io/hotio/qbitmanage:release-4.4.0
     depends_on:
       - qbittorrent
     environment:
