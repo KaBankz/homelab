@@ -5,9 +5,58 @@
   "packageRules": [
     {
       "matchManagers": ["docker-compose"],
-      "groupName": "Updates for {{packageFile}}",
-      "matchPackagePatterns": [".*"],
-      "groupSlug": "{{packageFileSlug}}"
+      "matchPaths": ["brollic/**"],
+      "groupName": "Updates for brollic stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["uptime-kuma/**"],
+      "groupName": "Updates for uptime-kuma stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["monolith/**"],
+      "groupName": "Updates for monolith stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["dockwatch/**"],
+      "groupName": "Updates for dockwatch stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["immich/**"],
+      "groupName": "Updates for immich stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["dockge/**"],
+      "groupName": "Updates for dockge stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["krabby/**"],
+      "groupName": "Updates for krabby stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["cloudflared/**"],
+      "groupName": "Updates for cloudflared stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["speedtest-tracker/**"],
+      "groupName": "Updates for speedtest-tracker stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["minecraft/**"],
+      "groupName": "Updates for minecraft stack"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchPaths": ["dozzle/**"],
+      "groupName": "Updates for dozzle stack"
     },
     {
       "matchDatasources": ["docker"],
