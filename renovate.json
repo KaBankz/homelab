@@ -6,57 +6,57 @@
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["brollic/**"],
-      "groupName": "Updates for brollic stack"
+      "groupName": "brollic stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["uptime-kuma/**"],
-      "groupName": "Updates for uptime-kuma stack"
+      "groupName": "uptime-kuma stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["monolith/**"],
-      "groupName": "Updates for monolith stack"
+      "groupName": "monolith stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["dockwatch/**"],
-      "groupName": "Updates for dockwatch stack"
+      "groupName": "dockwatch stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["immich/**"],
-      "groupName": "Updates for immich stack"
+      "groupName": "immich stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["dockge/**"],
-      "groupName": "Updates for dockge stack"
+      "groupName": "dockge stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["krabby/**"],
-      "groupName": "Updates for krabby stack"
+      "groupName": "krabby stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["cloudflared/**"],
-      "groupName": "Updates for cloudflared stack"
+      "groupName": "cloudflared stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["speedtest-tracker/**"],
-      "groupName": "Updates for speedtest-tracker stack"
+      "groupName": "speedtest-tracker stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["minecraft/**"],
-      "groupName": "Updates for minecraft stack"
+      "groupName": "minecraft stack"
     },
     {
       "matchManagers": ["docker-compose"],
       "matchPaths": ["dozzle/**"],
-      "groupName": "Updates for dozzle stack"
+      "groupName": "dozzle stack"
     },
     {
       "matchDatasources": ["docker"],
