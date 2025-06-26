@@ -1,98 +1,166 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "ignorePaths": [".template/**"],
+  "extends": [
+    "config:recommended"
+  ],
+  "ignorePaths": [
+    ".template/**"
+  ],
   "packageRules": [
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["brollic/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "brollic/**"
+      ],
       "groupName": "brollic stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["uptime-kuma/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "uptime-kuma/**"
+      ],
       "groupName": "uptime-kuma stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["monolith/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "monolith/**"
+      ],
       "groupName": "monolith stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["dockwatch/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "dockwatch/**"
+      ],
       "groupName": "dockwatch stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["immich/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "immich/**"
+      ],
       "groupName": "immich stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["dockge/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "dockge/**"
+      ],
       "groupName": "dockge stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["krabby/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "krabby/**"
+      ],
       "groupName": "krabby stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["cloudflared/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "cloudflared/**"
+      ],
       "groupName": "cloudflared stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["speedtest-tracker/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "speedtest-tracker/**"
+      ],
       "groupName": "speedtest-tracker stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["minecraft/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "minecraft/**"
+      ],
       "groupName": "minecraft stack"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "matchPaths": ["dozzle/**"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchFileNames": [
+        "dozzle/**"
+      ],
       "groupName": "dozzle stack"
     },
     {
-      "matchDatasources": ["docker"],
+      "matchDatasources": [
+        "docker"
+      ],
       "versionCompatibility": "^(?<compatibility>\\w+)-(?<version>.*)$",
-      "matchPackageNames": ["/^ghcr.io/hotio//"]
+      "matchPackageNames": [
+        "/^ghcr.io/hotio//"
+      ]
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/qbittorrent"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/qbittorrent"
+      ],
       "sourceUrl": "https://github.com/qbittorrent/qbittorrent"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/qbitmanage"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/qbitmanage"
+      ],
       "sourceUrl": "https://github.com/StuffAnThings/qbit_manage"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/prowlarr"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/prowlarr"
+      ],
       "sourceUrl": "https://github.com/Prowlarr/Prowlarr"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/sonarr"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/sonarr"
+      ],
       "sourceUrl": "https://github.com/Sonarr/Sonarr"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/radarr"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/radarr"
+      ],
       "sourceUrl": "https://github.com/Radarr/Radarr"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/plex"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/plex"
+      ],
       "changelogUrl": "https://forums.plex.tv/t/plex-media-server/30447"
     },
     {
-      "matchPackageNames": ["ghcr.io/hotio/tautulli"],
+      "matchPackageNames": [
+        "ghcr.io/hotio/tautulli"
+      ],
       "sourceUrl": "https://github.com/Tautulli/Tautulli"
     },
     {
-      "matchPackageNames": ["lscr.io/linuxserver/speedtest-tracker"],
+      "matchPackageNames": [
+        "lscr.io/linuxserver/speedtest-tracker"
+      ],
       "sourceUrl": "https://github.com/alexjustesen/speedtest-tracker"
     }
   ]
