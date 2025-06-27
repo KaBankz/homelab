@@ -27,35 +27,40 @@
         "ghcr.io/hotio/qbittorrent"
       ],
       "sourceUrl": "https://github.com/qbittorrent/qbittorrent",
-       "extractVersion": "^v?(?<version>.*)$"
+      "extractVersion": "^v?(?<version>.*)$"
     },
     {
       "matchPackageNames": [
         "ghcr.io/hotio/qbitmanage"
       ],
       "sourceUrl": "https://github.com/StuffAnThings/qbit_manage",
-       "extractVersion": "^v?(?<version>.*)$"
+      "extractVersion": "^v?(?<version>.*)$"
     },
     {
       "matchPackageNames": [
         "ghcr.io/hotio/prowlarr"
       ],
       "sourceUrl": "https://github.com/Prowlarr/Prowlarr",
-       "extractVersion": "^v?(?<version>.*)$"
+      "extractVersion": "^v?(?<version>.*)$"
     },
     {
       "matchPackageNames": [
         "ghcr.io/hotio/sonarr"
       ],
-      "sourceUrl": "https://github.com/Sonarr/Sonarr",
-       "extractVersion": "^v?(?<version>.*)$"
+      "sourceUrl": "https://github.com/Sonarr/Sonarr"
+    },
+    {
+      "matchSourceUrls": [
+        "https://github.com/Sonarr/Sonarr"
+      ],
+      "extractVersion": "^v?(?<version>.*)$"
     },
     {
       "matchPackageNames": [
         "ghcr.io/hotio/radarr"
       ],
       "sourceUrl": "https://github.com/Radarr/Radarr",
-       "extractVersion": "^v?(?<version>.*)$"
+      "extractVersion": "^v?(?<version>.*)$"
     },
     {
       "matchPackageNames": [
@@ -68,7 +73,7 @@
         "ghcr.io/hotio/tautulli"
       ],
       "sourceUrl": "https://github.com/Tautulli/Tautulli",
-       "extractVersion": "^v?(?<version>.*)$"
+      "extractVersion": "^v?(?<version>.*)$"
     },
     {
       "matchPackageNames": [
