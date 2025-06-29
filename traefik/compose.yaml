@@ -101,3 +101,4 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.nginx-rtr.entrypoints=websecure-internal"
       - "traefik.http.routers.nginx-rtr.rule=Host(`nginx.$DOMAINNAME`)"
+      - "traefik.http.routers.nginx-rtr.middlewares=authentik@file"
