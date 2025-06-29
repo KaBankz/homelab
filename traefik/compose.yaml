@@ -22,7 +22,7 @@ services:
       - --entrypoints.web-internal.address=:80
       - --entrypoints.websecure-external.address=:444
       - --entrypoints.websecure-internal.address=:443
-      - --entrypoints.traefik.address=:8080
+      - --entrypoints.traefik.address=:8081
       - --entrypoints.websecure-external.http3=true
       - --entrypoints.websecure-internal.http3=true
       - --entrypoints.web-external.http.redirections.entrypoint.to=websecure-external
@@ -75,7 +75,7 @@ services:
       - "81:81"
       - "443:443"
       - "444:444"
-      - "8080:8080"
+      - "8081:8081"
     environment:
       - TZ=$TZ
       - CF_DNS_API_TOKEN=$CF_DNS_API_TOKEN
