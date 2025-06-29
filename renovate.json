@@ -19,8 +19,7 @@
       ],
       "versionCompatibility": "^(?<compatibility>\\w+)-(?<version>.*)$",
       "matchPackageNames": [
-        "/^ghcr.io/hotio//",
-        "docker.io/tensorchord/pgvecto-rs"
+        "/^ghcr.io/hotio//"
       ]
     },
     {
