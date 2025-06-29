@@ -12,4 +12,7 @@
 # don't ignore the template directory
 !.template/
 
+# don't ignore traefik rules directory
+!traefik/config/rules/
+
 .DS_Store
