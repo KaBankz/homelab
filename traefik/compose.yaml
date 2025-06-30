@@ -4,7 +4,7 @@ networks:
 services:
   traefik:
     container_name: traefik
-    image: traefik:3.3
+    image: traefik:v3.4
     security_opt:
       - no-new-privileges:true
     networks:
