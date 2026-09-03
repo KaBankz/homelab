@@ -1,7 +1,7 @@
 services:
   qbittorrent:
     container_name: qbittorrent
-    image: ghcr.io/hotio/qbittorrent:release-4.6.3
+    image: ghcr.io/hotio/qbittorrent:release-v5.2.3
     ports:
       - 9010:8080
       - 9011:8118 # privoxy
@@ -61,7 +61,7 @@ services:
 
   recyclarr:
     container_name: recyclarr
-    image: ghcr.io/recyclarr/recyclarr:7.4.1
+    image: ghcr.io/recyclarr/recyclarr:8.7.2
     depends_on:
       - sonarr-anime
       - radarr-anime
@@ -94,7 +94,7 @@ services:
 
   radarr-anime:
     container_name: radarr-anime
-    image: ghcr.io/hotio/radarr:release-5.22.4.9896
+    image: ghcr.io/hotio/radarr:release-6.3.0.10514
     depends_on:
       - qbittorrent
       - prowlarr
@@ -112,7 +112,7 @@ services:
 
   prowlarr:
     container_name: prowlarr
-    image: ghcr.io/hotio/prowlarr:release-1.34.1.5021
+    image: ghcr.io/hotio/prowlarr:release-2.5.2.5491
     depends_on:
       - qbittorrent
     ports:
